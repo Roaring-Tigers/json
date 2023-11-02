@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <nav>
+        <ul>
+         
+            <a href="./display.html">Go to Display</a>
+        </ul>
+      </nav>
+
+      <div>
+         <form>
+              <input type="text" placeholder="Enter your Name">
+              <button type="submit">Submit</button>
+         </form>
+         <p class="output"></p>
+      </div>
+
+      <script>
+
+            const nameInput = document.querySelector('input');
+            const button = document.querySelector('button');
+            const output = document.querySelector('.output');
+
+
+            button.addEventListener('click', function(e){
+                e.preventDefault();
+                output.innerHTML = nameInput.value;
+
+                // naviagte to display.html
+                // window.location.href = './display.html';
+
+                // localstorage
+                // we will be using JSON
+                let jsonValue = JSON.stringify(nameInput.value);
+                localStorage.setItem("name", jsonValue);
+            })
+
+
+
+      </script>
+</body>
+</html>
+
+
+
+<!-- localstorage -->
